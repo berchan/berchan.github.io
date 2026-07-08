@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>隐私协议</title>
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --text: #1A1A1A;
+    --text-secondary: #555555;
+    --accent: #007AFF;
+    --divider: #E0E0E0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1C1C1E;
+      --text: #FFFFFF;
+      --text-secondary: #AAAAAA;
+      --accent: #0A84FF;
+      --divider: #38383A;
+    }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'HarmonyOS Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px 20px 40px;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  h1 { font-size: 22px; margin-bottom: 8px; color: var(--text); }
+  h2 { font-size: 17px; margin: 24px 0 10px; color: var(--text); }
+  h3 { font-size: 15px; margin: 16px 0 8px; color: var(--text); }
+  p { margin-bottom: 12px; color: var(--text-secondary); }
+  ul { padding-left: 20px; margin-bottom: 12px; }
+  li { color: var(--text-secondary); margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+  th, td { padding: 10px 12px; text-align: left; font-size: 13px; color: var(--text-secondary); border-bottom: 1px solid var(--divider); }
+  th { font-weight: 600; color: var(--text); }
+  .update-date { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<h1>隐私协议</h1>
+<p class="update-date">最后更新日期：2026年7月5日</p>
+
+<h2>1. 信息收集</h2>
+<p>"智时钟"是一款<strong>零数据收集</strong>的应用程序。我们郑重声明：</p>
+<ul>
+  <li><strong>不收集</strong>任何个人身份信息（姓名、手机号、邮箱等）</li>
+  <li><strong>不收集</strong>设备标识符（IMEI、OAID、SN 等）</li>
+  <li><strong>不收集</strong>位置信息（GPS、基站定位等）</li>
+  <li><strong>不收集</strong>应用使用统计数据或行为日志</li>
+  <li><strong>不包含</strong>任何第三方分析、广告或埋点 SDK</li>
+  <li><strong>不进行</strong>任何网络通信或数据传输</li>
+</ul>
+<p>本应用无需账号注册即可使用全部功能，是完全离线的本地应用。</p>
+
+<h2>2. 本地数据存储</h2>
+<p>您在本应用中创建和管理的所有数据仅存储在设备本地，使用 HarmonyOS 系统提供的 <code>preferences</code> API（键值对数据库）进行存取。具体存储的数据类型如下：</p>
+
+<table>
+  <tr><th>数据类型</th><th>存储内容</th><th>持久化</th></tr>
+  <tr><td>闹钟设置</td><td>时间、重复规律、标签、铃声选择、贪睡设置、节假日跳过选项</td><td>✔ 持久化</td></tr>
+  <tr><td>世界时钟城市</td><td>用户选择的城市名称及对应时区偏移量</td><td>✔ 持久化</td></tr>
+  <tr><td>计时器状态</td><td>运行中/暂停中的计时器数据（用于应用重启后恢复）</td><td>✔ 持久化</td></tr>
+  <tr><td>计时器历史</td><td>已完成计时器记录，含标签、目标时长、完成时间（最多保留 50 条）</td><td>✔ 持久化</td></tr>
+  <tr><td>节假日设置</td><td>用户自定义的节假日排除日期名称与日期范围</td><td>✔ 持久化</td></tr>
+  <tr><td>隐私同意标记</td><td>用户是否已同意本隐私协议的布尔值标记</td><td>✔ 持久化</td></tr>
+  <tr><td>秒表计次数据</td><td>当前会话的计次/分段计时记录</td><td>✘ 仅会话</td></tr>
+</table>
+
+<p>以上所有数据均<strong>不以上传、同步、备份或其他任何形式离开您的设备</strong>。卸载应用后，所有本地数据将被系统自动清除且不可恢复。</p>
+
+<h2>3. 系统权限使用</h2>
+<p>本应用仅申请和使用一项系统权限：</p>
+<ul>
+  <li><strong>代理提醒权限</strong>（ohos.permission.PUBLISH_AGENT_REMINDER）<br>
+  使用目的：在闹钟时间到达时，即使应用已退出或设备重启，系统仍会代理触发闹钟提醒通知。<br>
+  数据范围：提醒内容仅包含您设置的闹钟标签和标题文字，<strong>不包含任何个人信息</strong>。<br>
+  控制方式：您可以在系统设置中随时开启或关闭此权限。关闭后闹钟将无法在应用退出后正常提醒。</li>
+</ul>
+<p>本应用<strong>不使用</strong>或申请任何其他系统权限，包括但不限于：位置、相机、麦克风、通讯录、存储、日历、电话、短信、身体传感器等。</p>
+
+<h2>4. 内置网页说明</h2>
+<p>本应用的用户协议和隐私协议页面使用系统 WebView 组件加载本地 HTML 文件（存储在应用安装包内的 <code>rawfile</code> 目录中）。WebView 的 DOM Storage 功能已启用，但页面内容完全来自本地文件，不加载任何远程网络资源，不会与外部服务通信。</p>
+
+<h2>5. 数据安全</h2>
+<p>由于所有数据均存储在您的设备本地，数据安全性主要取决于以下因素：</p>
+<ul>
+  <li>您的设备本身的安全机制（如屏幕锁定密码、生物识别等）</li>
+  <li>HarmonyOS 系统的安全沙箱机制（应用间数据隔离）</li>
+  <li>设备是否已获取超级用户权限（root/越狱）</li>
+</ul>
+<p>我们建议您保持设备操作系统的更新，以获得最新的安全补丁。在设备维修或转售前，建议先卸载本应用以清除所有本地数据。</p>
+
+<h2>6. 儿童隐私</h2>
+<p>本应用不针对 13 岁以下儿童设计，不会有意收集或存储儿童的个人信息。如家长或监护人发现儿童在使用本应用时提供了个人信息，请联系我们以便指导协助删除相关数据。</p>
+
+<h2>7. 隐私政策变更</h2>
+<p>我们可能会不时更新本隐私政策以反映应用功能或法律要求的变化。更新后的政策将在应用内公布，新政顶部会标注新的生效日期。对于重大变更，我们会在首次启动时再次请求您的确认。</p>
+<p>继续使用本应用即表示您同意更新后的隐私政策。我们建议您定期查阅本政策。</p>
+
+<h2>8. 您的权利</h2>
+<p>作为用户，您对本地存储的数据拥有完全的控制权：</p>
+<ul>
+  <li><strong>查看</strong> — 所有数据均可在应用内对应页面直接查看</li>
+  <li><strong>修改</strong> — 您可随时在应用内编辑或删除各项数据</li>
+  <li><strong>删除</strong> — 您可以逐项删除，也可通过卸载应用一次性清除所有数据</li>
+  <li><strong>拒绝</strong> — 如不同意本隐私政策，您可以选择退出应用</li>
+</ul>
+
+<h2>9. 联系我们</h2>
+<p>如果您对本隐私政策有任何疑问、建议或需要数据方面的协助，请通过应用内"设置 → 联系我们"页面提供的联系方式与我们联系。我们会在收到反馈后尽快回复。</p>
+</body>
+</html>
